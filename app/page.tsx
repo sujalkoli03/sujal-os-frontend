@@ -152,7 +152,7 @@ export default function Page() {
     setServerMessage("");
     
     try {
-      const res = await fetch("http://localhost:8000/send-email", {
+      const res = await fetch("https://sujal-os-api.onrender.com/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
