@@ -23,11 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased">
+      {/* Force the background to black here so there's no "white flash" 
+          on load and ensure Tailwind utilities can apply.
+      */}
+      <body className="bg-[#050505] text-white min-h-screen flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
